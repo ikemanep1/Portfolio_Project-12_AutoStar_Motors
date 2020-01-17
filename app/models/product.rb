@@ -4,5 +4,5 @@ class Product < ApplicationRecord
   validates :cost, presence: true
   validates :country, presence: true
   validates_length_of :name, maximum: 100
-  before_save(:titleize_Product)
+  scope :search, -> (product_parameter) { where("name like ?", "%#{product_parameter}%")} 
   end
