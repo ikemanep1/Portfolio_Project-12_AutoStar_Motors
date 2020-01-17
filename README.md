@@ -24,7 +24,7 @@ _This program is a database-practice site. It lists vehicles, and reviews for th
 
 # Known Bugs
 
-__
+_For some reason, the test for titileize fails, but works just fine on the application. I am unable to find any typos._
 
 # specs
 | Behavior        | Input           | Outcome  |
