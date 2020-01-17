@@ -1,7 +1,7 @@
-<h1>Song: <%= @review.name %></h1>
-<h2>Album: <%= @product.name %></h2>
-<h3><%= @review.body %></h3>
-<h3><%= @review.rating %></h3>
+<h1>Review: by <%= @review.name %></h1>
+<h2>Product: <%= @product.name %>, recently purchased.</h2>
+<h3>This is what the new owner had to say: <%= @review.body %></h3>
+<h3>Rating: <%= @review.rating %> out of 5 stars.</h3>
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
 <p><%= link_to "Delete review", product_review_path(@product, @review),

@@ -1,6 +1,6 @@
-<h1><%= @product.name %></h1>
-<h3><%= @product.cost %></h3>
-<h3><%= @product.country %></h3>
+<h1>Interested in buying a used <%= @product.name %>?</h1>
+<h3>She only costs about <%= @product.cost %> dollars!</h3>
+<h3>Proudly made in the <%= @product.country %></h3>
 
 <% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
