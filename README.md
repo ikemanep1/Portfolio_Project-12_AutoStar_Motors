@@ -20,7 +20,7 @@ _This program is a database-practice site. It lists vehicles, and reviews for th
 
 # database visual
 
-![This is how the database looks](public/screenshot.png)
+![This is how the database looks](images/visual.jpg)
 
 # Known Bugs
 
