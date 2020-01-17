@@ -1,18 +1,21 @@
-<h1>Autostar Motors</h1>
+<div class="information">
 
-<p>Welcome to Autostar Motors, Denton Nebraska's leading car dealership. We sell the best vehicles for hauling corn, and to top it off, they're all painted RED. GO BIG RED!</p>
-
-<p>Corporate just released a new used-car program, so if you got a broken-down pickup, or a tractor that's seen a-bit-too-many interstates, feel free to fill out our forms below.</p>
-
-<% if @products.any? %>
+  <h1>Autostar Motors</h1>
+  <p>Welcome to Autostar Motors, Denton Nebraska's leading car dealership. We sell the best vehicles for hauling corn, and to top it off, they're all painted RED. GO BIG RED!</p>
+  <p>Corporate just released a new used-car program, so if you got a broken-down pickup, or a tractor that's seen a-bit-too-many interstates, feel free to fill out our forms below.</p>
+</div>
+<div class="logic">
+  <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+    <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
-<% else %>
+  <% else %>
   <p>There are no products yet.</p>
-<% end %>
+  <% end %>
+</div>
 
-
-<p><%= link_to "Put your ride on the 'roster!'", new_product_path %></p>
+<div class="information">
+  <p><%= link_to "Put your ride on the 'roster!'", new_product_path %></p>
+</div>
