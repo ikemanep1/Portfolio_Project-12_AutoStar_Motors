@@ -1,11 +1,3 @@
 <h1>Add a new review:</h1>
 
-<%= form_for [@product, @review] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <%= f.label :rating %>
-  <%= f.text_field :rating %>
-  <p><%= f.submit %></p>
-<% end %>
+<%= render "layouts/review_form" %>
