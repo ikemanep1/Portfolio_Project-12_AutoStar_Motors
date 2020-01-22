@@ -46,7 +46,7 @@
 
   <p>Ride of the line!</p>
   <ul>
-    <% @products.most_reviews do  %>
+    <% @products.most_reviews.each do |product| %>
     <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
