@@ -5,15 +5,16 @@ class Product < ApplicationRecord
   validates :cost, presence: true
   validates :country, presence: true
   validates_length_of :name, maximum: 100
-  scope :searchusa, -> (product_parameter) { where("name like USA", "%#{product_parameter}%")}
-  scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
-  scope :most_tasks, -> {(
-    select("products.country, products.name, products.cost, count(reviews.id) as reviews_count")
+  scope :most_reviews, -> {(
+    select("products.id, products.name, products.cost, products.country, COUNT(reviews.id) AS reviews_count")
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
     .limit(1)
+    .first
     )}
+  scope :USA, -> { where(country: "USA") }
+  scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
   before_save(:titleize_product)
 
