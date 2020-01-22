@@ -11,9 +11,8 @@ class Product < ApplicationRecord
     .group("products.id")
     .order("reviews_count DESC")
     .limit(1)
-    .first
     )}
-  scope :USA, -> { where(country: "USA") }
+  scope :usa, -> { where(country: "USA") }
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
   before_save(:titleize_product)

@@ -16,6 +16,43 @@
   <% end %>
 </div>
 
+<div class="logic">
+  <% if @products.any? %>
+  <p>products made in the good ol' USA!</p>
+  <ul>
+    <% @products.usa.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no products yet.</p>
+  <% end %>
+</div>
+
+<div class="logic">
+  <% if @products.any? %>
+  <p>New available rides!</p>
+  <ul>
+    <% @products.three_most_recent.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no products yet.</p>
+  <% end %>
+</div>
+
+<div class="logic">
+
+  <p>Ride of the line!</p>
+  <ul>
+    <% @products.most_reviews do  %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+
+</div>
+
 <div class="information">
   <p><%= link_to "Put your ride on the 'roster!'", new_product_path %></p>
 </div>
