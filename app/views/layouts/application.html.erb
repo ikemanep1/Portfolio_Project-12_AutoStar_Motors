@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsProductsReviews</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RailsProductsReviews</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="/styles.css">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <div class="nav-bar-top social-media">
+    <span class="nav-bar-title">AutoStar</span>
+</div>
+  <div class="container">
     <% if current_user %>
-     <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
-   <% else %>
-     <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
-   <% end %>
+    <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+    <% else %>
+    <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+    <% end %>
+
     <%= flash[:alert] %>
-  <%= flash[:notice] %>
+    <%= flash[:notice] %>
+
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>

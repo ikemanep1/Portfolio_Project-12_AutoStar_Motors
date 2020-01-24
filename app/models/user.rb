@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates_confirmation_of :password
   validates :email, :presence => true, :uniqueness => true
   before_save :encrypt_password
+  has_one_attached :profile_picture
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
@@ -17,4 +18,3 @@ class User < ApplicationRecord
       nil
     end
   end
-end
